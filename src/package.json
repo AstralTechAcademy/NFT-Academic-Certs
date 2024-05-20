@@ -1,0 +1,64 @@
+{
+  "name": "avalanche-smart-contract-quickstart",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.9.3",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "avalanche": "3.8.5",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethereumjs-tx": "^2.1.2",
+    "ethers": "^5.4.5",
+    "hardhat": "2.6.1",
+    "ts-node": "^10.2.1",
+    "web3": "^1.5.2"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "https://github.com/ava-labs/avalanche-smart-contract-quickstart",
+  "author": "Connor Daly <connor.daly@avalabs.org>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@avalabs.org>"
+  ],
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "precompile": "rimraf ./build/",
+    "compile": "npx hardhat compile",
+    "console": "npx hardhat console",
+    "pretest": "yarn compile",
+    "test": "npx hardhat test",
+    "main": "npx hardhat run main/Main.ts --network local",
+    "main-fuji": "npx hardhat run main/Main.ts --network fuji",
+    "main-mainnet": "npx hardhat run main/Main.ts --network mainnet",
+    "getaddr": "npx hardhat run main/GetAddress.ts --network fuji",
+    "fund": "npx hardhat run main/Fund.ts --network local",
+    "generateTitles": "npx hardhat run main/GenerateTitles.ts",
+    "educa": "npx hardhat run main/Educa.ts --network fuji",
+    "deploy": "npx hardhat run scripts/deploy.ts --network local",
+    "deploy-fuji": "npx hardhat run scripts/deploy.ts --network fuji",
+    "erc20": "npx hardhat run scripts/erc20.ts",
+    "nft": "npx hardhat run scripts/nft.ts --network mainnet",
+    "storage": "npx hardhat run scripts/storage.ts",
+    "send-avax-wallet-signer": "npx hardhat run scripts/sendAvaxWalletSigner.ts",
+    "send-avax-json-provider": "npx hardhat run scripts/sendAvaxJSONProvider.ts",
+    "lint": "prettier ./test/**/*.ts --check",
+    "prepublishOnly": "yarn test",
+    "hardhat": "npx hardhat",
+    "accounts": "npx hardhat accounts",
+    "balances": "npx hardhat balances",
+    "fund-cchain-addresses": "npx hardhat run scripts/fund-cchain-addresses.js"
+  },
+  "dependencies": {
+    "@pinata/sdk": "^2.1.0",
+    "pinata": "^0.0.1",
+    "readline-sync": "^1.4.10",
+    "typescript": "^4.5.4"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  }
+}
